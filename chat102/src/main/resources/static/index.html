@@ -1,87 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4-102聊天室</title>
-    <!-- import CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-<body>
-<div id="app">
-    <el-container>
-        <el-header><h1>4-102专属聊天室</h1></el-header>
-        <el-main>
-            <el-row>
-                <el-col :span="4">
-                    <div class="grid-content"></div>
-                </el-col>
-                <el-col :span="16">
-                    <div class="grid-content">
-                        <div style="width: 100%;height: 700px;border: 1px solid black;display: inherit;text-align: center">
-                            <div>
-                                <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-                            </div>
-                        </div>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="grid-content"></div>
-                </el-col>
-            </el-row>
 
-            <el-row>
-                <el-col :span="6">
-                    <div class="grid-content"></div>
-                </el-col>
-                <el-col :span="12">
-                    <div class="grid-content">
-                        <div style="width: 100%;height: 100px;display: inherit;text-align: center">
-                            <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-                                <el-form-item>
-                                    <el-input placeholder="4-102专属聊天室正在加急装修中。。。" label-width="0px" type="textarea" v-model="ruleForm.desc"></el-input>
-                                </el-form-item>
-                            </el-form>
-                        </div>
-                    </div>
-                </el-col>
-                <el-col :span="1">
-                    <el-button type="primary" @click="submitForm('ruleForm')">发送</el-button>
-                </el-col>
-                <el-col :span="5">
-                    <div class="grid-content"></div>
-                </el-col>
-            </el-row>
-        </el-main>
-    </el-container>
-</div>
+<body>
+    <h2 id="title">4-102聊天室</h2>
+    <div id="box">
+        <div id="messageBody">
+            <div class="myMessage">
+                <p class="myName"><b>老陈</b></p>
+                <span class="mySpan">吃饭了吗，您？</span>
+            </div>
+            <div class="otherMessage">
+                <p class="otherName"><b>老韩</b></p>
+                <span class="otherSpan">诶呦，吃的饱饱的呢！</span>
+            </div>
+        </div>
+        <div id="inputBody">
+                <input id="inputBox" type="text">
+                <input id="submitButton" type="submit" value="发送" onclick="send()">
+        </div>
+    </div>
 </body>
-<!-- import Vue before Element -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<!-- import JavaScript -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 <script>
-    new Vue({
-        el: '#app',
-        data: function () {
-            return {
-                ruleForm: {
-                    desc: ''
-                }
-            }
-        },
-        methods: {
-            submitForm(formName) {
-                this.$refs[formName].validate((valid) => {
-                    if (valid) {
-                        alert('submit!');
-                    } else {
-                        console.log('error submit!!');
-                        return false;
-                    }
-                });
-            }
-        }
-    })
+var inputBox = $('#inputBox');
+var messageBody = $('#messageBody');
+
+function send(){
+    console.log(inputBox.val());
+    messageBody.append('<div class="myMessage"><p class="myName"><b>老陈</b></p> <span class="mySpan">'+ inputBox.val() +'</span></div>');
+    inputBox.val('');
+}
 </script>
 </html>

@@ -1,77 +1,68 @@
-.el-header, .el-footer {
+#box {
+    width: 600px;
+    height: 664px;
+    border: 1px solid #000;
+    margin: 20px auto;
+}
+
+#messageBody {
+    width: 580px;
+    height: 600px;
+    border: 1px solid #000;
+    margin: 10px auto;
+    overflow: scroll;
+}
+
+#title {
+    margin: 10px auto;
     text-align: center;
-    line-height: 60px;
 }
 
-.el-aside {
-    text-align: center;
-    line-height: 200px;
+.mySpan {
+    background-color: rgb(116, 245, 202);
+    border-radius: 5px;
+    font-size: large;
+    display: inline-block;
+    padding: 10px 7px;
 }
 
-.el-main {
-    text-align: center;
-    line-height: 160px;
+.otherSpan{
+    background-color: rgb(236, 198, 148);
+    border-radius: 5px;
+    font-size: large;
+    display: inline-block;
+    padding: 10px 7px;
 }
 
-body > .el-container {
-    margin-bottom: 40px;
+.myMessage {
+    margin: 10px;
+    text-align: right;
 }
 
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-    line-height: 260px;
+.otherMessage {
+    margin: 10px;
+    text-align: left;
 }
 
-.el-container:nth-child(7) .el-aside {
-    line-height: 320px;
+#inputBox {
+    margin-left: 8px;
+    width: 516px;
+    float: left;
+    font-size: 1.3rem;
 }
 
-#main-div {
-    width: 1400px;
-    height: 700px;
-    margin-left: auto;
-    margin-right: auto;
+#submitButton {
+    margin-left: 8px;
+    float: left;
+    font-size: 1.1rem;
 }
 
-.el-input {
-    width: 700px;
+.myName {
+    margin: 0;
+    color: rgb(110, 110, 110);
 }
 
-.el-button {
-    float: right;
-    width: 200%;
-    height: 54px;
-}
-
-.el-textarea__inner {
-    display: inherit;
-    margin-left: -22%;
-}
-
-.el-form-item__content {
-    width: 80%;
-}
-
-.el-textarea {
-    width: 80%;
-}
-
-.el-row {
-    margin-bottom: 20px;
-}
-
-.el-col {
-    border-radius: 4px;
-}
-
-.bg-purple-light {
-}
-
-.grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-}
-
-.row-bg {
-    padding: 10px 0;
+.otherName {
+    margin: 0;
+    color: rgb(110, 110, 110);
 }
