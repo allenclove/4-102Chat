@@ -10,8 +10,8 @@
     height: 600px;
     border: 1px solid #000;
     margin: 10px auto;
-    overflow-y: scroll;
-    -ms-overflow-style: none; /* IE10+ */
+    overflow-y: scroll;   /* 添加滚动条 */
+    -ms-overflow-style: none; /* 设置滚动条样式，IE10+ */
 }
 
 /* 整个滚动条样式 当width:0;或display:none;时，滚动条不显示 */
@@ -25,11 +25,15 @@
 }
 
 .mySpan {
+    /* 背景颜色设置到span元素中，就是和文字差不多的样子，
+    如果是设置div那就是一整个div，无法根据文字数量来变化 */
     background-color: rgb(116, 245, 202);
-    border-radius: 5px;
-    font-size: large;
-    display: inline-block;
-    padding: 10px 7px;
+    border-radius: 5px;     /* 设置为圆角边框 */
+    font-size: large;       /*通过文字大小，撑起div，可以用来调节大小*/
+    display: inline-block;     /* 定义为块元素，才能使用下面的padding */
+    padding: 10px 7px;    /* 设置内边距，否则文字和div边框太靠近 */
+    max-width: 70%;     /* 限制我们发送的消息最大宽度，超出会自动换行 */
+    text-align: left;   /* 外层div是向右边靠的，我们内部的文字还是向左对齐 */
 }
 
 .otherSpan{
@@ -38,6 +42,7 @@
     font-size: large;
     display: inline-block;
     padding: 10px 7px;
+    max-width: 70%;
 }
 
 .myMessage {
