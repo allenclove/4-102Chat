@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
-<body>
+<body onload="document.getElementById('inputBox').focus()">
     <h2 id="title">4-102聊天室</h2>
     <div id="box">
         <div id="messageBody">
@@ -33,10 +33,20 @@
 var inputBox = $('#inputBox');
 var messageBody = $('#messageBody');
 
+// 发送消息
 function send(){
     console.log(inputBox.val());
     messageBody.append('<div class="myMessage"><p class="myName"><b>老陈</b></p> <span class="mySpan">'+ inputBox.val() +'</span></div>');
+    messageBody.scrollTop( messageBody[0].scrollHeight);
     inputBox.val('');
+    inputBox.focus();
 }
+
+// 输入框点击回车之后，调用‘发送消息’的方法
+inputBox.keydown((e)=>{
+    if(e.keyCode == 13){
+        this.send();
+    }
+})
 </script>
 </html>

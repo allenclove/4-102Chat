@@ -10,8 +10,14 @@
     height: 600px;
     border: 1px solid #000;
     margin: 10px auto;
-    overflow: scroll;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE10+ */
 }
+
+/* 整个滚动条样式 当width:0;或display:none;时，滚动条不显示 */
+#messageBody::-webkit-scrollbar {  
+    display:none;
+ }
 
 #title {
     margin: 10px auto;
@@ -66,3 +72,5 @@
     margin: 0;
     color: rgb(110, 110, 110);
 }
+
+
