@@ -23,30 +23,36 @@
             </div>
         </div>
         <div id="inputBody">
-                <input id="inputBox" type="text">
-                <input id="submitButton" type="submit" value="发送" onclick="send()">
+            <input id="inputBox" type="text">
+            <input id="submitButton" type="submit" value="发送" onclick="send()">
         </div>
     </div>
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 <script>
-var inputBox = $('#inputBox');  //获取输入框
-var messageBody = $('#messageBody');  //获取聊天记录显示区域
+    var inputBox = $('#inputBox');  //获取输入框
+    var messageBody = $('#messageBody');  //获取聊天记录显示区域
 
-// 发送消息
-function send(){
-    console.log(inputBox.val());
-    messageBody.append('<div class="myMessage"><p class="myName"><b>老陈</b></p> <span class="mySpan">'+ inputBox.val() +'</span></div>');
-    messageBody.scrollTop( messageBody[0].scrollHeight);  //滚动条显示到最下方
-    inputBox.val('');  //清空输入框
-    inputBox.focus(); //焦点回到输入框
-}
-
-// 输入框点击回车之后，调用‘发送消息’的方法
-inputBox.keydown((e)=>{
-    if(e.keyCode == 13){
-        this.send();
+    // 发送消息
+    function send() {
+        if (!inputBox.val().trim() == '') {
+            console.log(inputBox.val());
+            messageBody.append('<div class="myMessage"><p class="myName"><b>老陈</b></p> <span class="mySpan">' + inputBox.val() + '</span></div>');
+            messageBody.scrollTop(messageBody[0].scrollHeight);  //滚动条显示到最下方
+            inputBox.val('');  //清空输入框
+            inputBox.focus(); //焦点回到输入框
+        } else {
+            console.log('输入框为空');
+            inputBox.val('');  //清空输入框
+        }
     }
-})
+
+    // 输入框点击回车之后，调用‘发送消息’的方法
+    inputBox.keydown((e) => {
+        if (e.keyCode == 13) {
+            this.send();
+        }
+    })
 </script>
+
 </html>
